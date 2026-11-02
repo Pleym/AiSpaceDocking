@@ -1,5 +1,7 @@
 # AI Estimation for Autonomous Space Docking
 
+[![Watch the demo on YouTube](https://img.shields.io/badge/YouTube-watch%20the%20demo-red?logo=youtube)](https://youtu.be/DaG68fl6lts)
+
 > **Public beta.** This repo holds the simulation and video tooling of a bigger side project. The
 > perception core (synthetic dataset pipeline, keypoint network, trained weights, CNN-in-the-loop
 > bridge) and the full Kalman-filtered pilot stay private for now. They'll be released with **v1.0**,
@@ -8,8 +10,8 @@
 ![Docking demo](media/demo.gif)
 
 *An Orion-class capsule docks to a station port. A CNN looks at the onboard camera, a Kalman filter
-cleans up its estimates, and a Simulink pilot flies the approach. The demo is sped up 12×;
-[watch the real-time 720p version](media/docking_demo_720p.mp4).*
+cleans up its estimates, and a Simulink pilot flies the approach. The demo is sped up 12×:
+**[watch the full real-time video on YouTube](https://youtu.be/DaG68fl6lts)** (or [download the 720p version](media/docking_demo_720p.mp4)).*
 
 ## What's this?
 
