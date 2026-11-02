@@ -6,9 +6,9 @@
   <img src="media/demo.gif" alt="Docking demo"/>
 </p>
 
-*An Orion-class capsule docks to a station port. A CNN looks at the onboard camera, a Kalman filter
-cleans up its estimates, and a Simulink pilot flies the approach. The demo is sped up 12×:
-**[watch the full real-time video on YouTube](https://youtu.be/DaG68fl6lts)** (or [download the 720p version](media/docking_demo_720p.mp4)).*
+An Orion-class capsule docks to a station port. A CNN looks at the onboard camera, a Kalman filter
+cleans up its estimates, and a Simulink pilot flies the approach. Real-time video:
+**[watch the full real-time video on YouTube](https://youtu.be/DaG68fl6lts)**
 
 <h1 align="center">Features</h1>
 
