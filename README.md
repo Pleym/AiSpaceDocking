@@ -1,24 +1,23 @@
 # AI Estimation for Autonomous Space Docking
 
-[![Watch the demo on YouTube](https://img.shields.io/badge/YouTube-watch%20the%20demo-red?logo=youtube)](https://youtu.be/DaG68fl6lts)
+**Public beta**
 
-> **Public beta.** This repo holds the simulation and video tooling of a bigger side project. The
-> perception core (synthetic dataset pipeline, keypoint network, trained weights, CNN-in-the-loop
-> bridge) and the full Kalman-filtered pilot stay private for now. They'll be released with **v1.0**,
-> once the project is finished. Until then, expect rough edges: this is very much a work in progress.
-
-![Docking demo](media/demo.gif)
+<p align="center">
+  <img src="media/demo.gif" alt="Docking demo"/>
+</p>
 
 *An Orion-class capsule docks to a station port. A CNN looks at the onboard camera, a Kalman filter
 cleans up its estimates, and a Simulink pilot flies the approach. The demo is sped up 12×:
 **[watch the full real-time video on YouTube](https://youtu.be/DaG68fl6lts)** (or [download the 720p version](media/docking_demo_720p.mp4)).*
 
-## What's this?
+<h1 align="center">Features</h1>
 
 I wanted to see how far a single camera and a neural network could go at one of the hardest parts of
 spaceflight: the last ten metres of a docking. No lidar, no retro-reflectors, just pixels.
 
-![Pipeline](media/pipeline.png)
+<p align="center">
+  <img src="media/pipeline.png" alt="Pipeline"/>
+</p>
 
 1. **Synthetic data.** Blender renders the docking port from random camera poses, plus whole approach
    sequences flown by the simulator itself.
@@ -32,31 +31,25 @@ spaceflight: the last ten metres of a docking. No lidar, no retro-reflectors, ju
 5. **Closing the loop.** Blender renders the camera view at every control step, and the actual
    network steers the vehicle.
 
-The diagram is an [Excalidraw](https://excalidraw.com) file ([`media/pipeline.excalidraw`](media/pipeline.excalidraw)):
-open it there to tweak it.
+<h2 align="center">Dataset & training</h2>
 
-## Dataset & training
-
-Rough numbers, the details come with v1.0:
-
-- **A few thousand synthetic images** (~4k renders, more with augmentation), covering the approach
-  from about 10 m down to half a metre.
-- **Full approach sequences** flown in closed loop by the simulator and rendered frame by frame, so
-  the test set has trajectories the model has never seen.
-- **Photometric augmentation**: noise, blur, exposure and contrast.
-- **Splits by whole sequences.** The test set stayed untouched until the very end.
-- **About ten training runs so far**, from a small baseline CNN to the current keypoint model.
+This project uses Blender to generate the dataset: 1,000+ images rendered from different positions
+and angles. During training, the images are augmented with noise, blur, exposure changes and more.
 
 <p align="center">
-  <img src="media/approach_kalman_graphs.jpg" width="49%" alt="Approach with live Kalman graphs"/>
+  <img src="media/apercu_augmentations_horizontal.png" width="80%" alt="Dataset augmentations"/>
+</p>
+
+<p align="center">
+  <img src="media/approach_kalman_graphs.jpg" width="50%" alt="Approach with live Kalman graphs"/>
   <img src="media/contact.jpg" width="49%" alt="Contact"/>
 </p>
 
 ## Roadmap
 
 - [ ] **v1.0**: release the perception core, the full Kalman pilot and the CNN-in-the-loop bridge
-- [ ] Domain randomisation (procedural backgrounds, sun angles) and R-bar approaches
-- [ ] Thruster-level actuation and sensor latency
+- [ ] Increase the number of simulations (to cover worst-case scenarios)
+- [ ] Increase the CNN frequency
 - [ ] Hardware-in-the-loop with a real camera
 
 ## References & credits
