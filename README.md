@@ -1,6 +1,5 @@
 # AI Estimation for Autonomous Space Docking
 
-**Public beta**
 
 <p align="center">
   <img src="media/demo.gif" alt="Docking demo"/>
@@ -48,9 +47,12 @@ and angles. During training, the images are augmented with noise, blur, exposure
 ## Roadmap
 
 - [ ] **v1.0**: release the perception core, the full Kalman pilot and the CNN-in-the-loop bridge
+- [ ] Upgrade close range pilot
 - [ ] Increase the number of simulations (to cover worst-case scenarios)
 - [ ] Increase the CNN frequency
 - [ ] Hardware-in-the-loop with a real camera
+- [ ] increase the capsule render
+- [ ] realase the dataset 
 
 ## References & credits
 
