@@ -52,7 +52,8 @@ and angles. During training, the images are augmented with noise, blur, exposure
 - [ ] Increase the CNN frequency
 - [ ] Hardware-in-the-loop with a real camera
 - [x] increase the capsule render
-- [x] New earth model  [here](./media/newearth.png)
+- [x] New earth model  [here](./media/newearth.png) or [closer](./media/newearthclose.png)
+- [ ] 
 - [ ] realase the dataset 
 
 ## References & credits
